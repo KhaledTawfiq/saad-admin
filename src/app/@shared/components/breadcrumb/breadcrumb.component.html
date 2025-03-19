@@ -1,0 +1,26 @@
+<ul [class]="'breadcrumb margin-bottom-' + spaceBottom" [ngClass]="{'breadcrumb--white': white}">
+  <li class="breadcrumb__item">
+    <a
+      mat-button
+      color="primary"
+      [routerLink]="dashRoutes.base.route"
+      class="breadcrumb__link"
+      >الرئيسية</a
+    >
+  </li>
+  <li class="breadcrumb__item" *ngFor="let data of data; let i = index">
+    <a
+      mat-button
+      color="primary"
+      [routerLink]="[data.link]"
+      [queryParams]="data.queryParams"
+      class="breadcrumb__link"
+      >{{ data.title }}</a
+    >
+  </li>
+  <li class="breadcrumb__item" *ngIf="current">
+    <span mat-button class="breadcrumb__link breadcrumb__link--current">{{
+      current
+    }}</span>
+  </li>
+</ul>

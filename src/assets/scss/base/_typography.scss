@@ -1,0 +1,89 @@
+$font-weights: (
+  "light": 300, //--font-light
+  "roman": 400, //--font-roman
+  "medium": 500, //--font-medium
+  "semiBold": 600, //--font-semiBold
+  "bold": 700, //--font-bold
+);
+
+$font-sizes: (
+  90: 5.625rem, // 90px /// --font-size-typo-90
+  56: 3.5rem, // 56px /// --font-size-typo-56
+  48: 3rem, // 48px /// --font-size-typo-48
+  40: 2.5rem, // 40px /// --font-size-typo-40
+  36: 2.25rem, // 36px /// --font-size-typo-36
+  32: 2rem, // 32px /// --font-size-typo-32
+  29: 1.812rem, // 29px /// --font-size-typo-29
+  26: 1.625rem, // 26px /// --font-size-typo-26
+  23: 1.438rem, // 23px /// --font-size-typo-23
+  20: 1.25rem,  // 20px /// --font-size-typo-20
+  18: 1.125rem, // 18px /// --font-size-typo-18
+  16: 1rem,    // 16px /// --font-size-typo-16
+  14: 0.875rem,// 14px /// --font-size-typo-14
+  13: 0.812rem,// 13px /// --font-size-typo-13
+  12: 0.75rem, // 12px /// --font-size-typo-12
+  11: 0.688rem,// 11px /// --font-size-typo-11
+  8: 0.5rem    // 8px /// --font-size-typo-8
+);
+$font-sizes-lg: (
+  90: 3rem,
+  56: 2.4rem,
+  48: 2rem,
+  40: 1.8rem,
+  36: 1.6rem,
+  32: 1.4rem,
+  29: 1.3rem,
+  26: 1.2rem,
+  23: 1.1rem,
+  20: 1rem,
+  18: 0.9rem,
+  16: 0.875rem,
+  14: 0.75rem,
+  13: 0.7rem,
+  12: 0.65rem,
+  11: 0.6rem,
+  8: 0.45rem
+);
+:root {
+  @each $weight, $value in $font-weights {
+    --font-#{$weight}: #{$value};
+  }
+
+  @each $size, $rem in $font-sizes {
+    --font-size-typo-#{$size}: #{$rem};
+  }
+}
+
+@mixin typo($name, $weight, $size) {
+  .#{$name}-#{$size} {
+    font-family: var(--font-family) !important;
+    // line-height: 18px !important;
+    font-size: var(--font-size-typo-#{$size}) !important;
+    font-weight: var(--font-#{$weight}) !important;
+    letter-spacing: 0px !important;
+    margin: 0;
+    // Responsive styles for smaller screens
+    @include media-breakpoint-down(lg) {
+      font-size: #{map-get($font-sizes-lg, $size)} !important;
+    }
+  }
+}
+
+// Generate all combinations of font sizes and weights
+@each $size in map-keys($font-sizes) {
+  @each $weight in map-keys($font-weights) {
+    @include typo(typo-#{$weight}, $weight, $size);
+  }
+}
+
+// Mixin to generate classes for font weights
+@mixin font-weight-class($weight) {
+  .font-#{$weight} {
+    font-weight: var(--font-#{$weight}) !important;
+  }
+}
+
+// Generate classes for all font weights
+@each $weight in map-keys($font-weights) {
+  @include font-weight-class($weight);
+}

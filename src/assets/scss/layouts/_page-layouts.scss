@@ -1,0 +1,22 @@
+.main-layout{
+  padding-top: calc(var(--top-header-height) + var(--bottom-header-height) + var(--space-size-24));
+  height: 102vh;
+  overflow: scroll;
+  padding-bottom: var(--space-size-64);
+  // padding-bottom: calc( 72px + var(--space-size-64));
+  @include media-breakpoint-down(sm) {
+    padding-top: calc(var(--top-header-height) + var(--space-size-24));
+  }
+}
+.col-120 {
+  @include media-breakpoint-up(md) {
+    flex: 0 0 12%;
+    width: 12%;
+  }
+}
+.col-37 {
+  @include media-breakpoint-up(md) {
+    flex: 0 0 37.5%;
+    width: 37.5%;
+  }
+}

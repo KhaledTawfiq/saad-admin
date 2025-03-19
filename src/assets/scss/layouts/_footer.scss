@@ -1,0 +1,20 @@
+.ms-footer{
+  background-color: var(--color-light-gray-2);
+  z-index: 5;
+  border-top: 2px solid var(--color-gray-4);
+  position: fixed;
+  width: 100%;
+  height: var(--footer-height);
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-size-24);
+  @include media-breakpoint-down(md) {
+    padding: 0;
+  }
+}
+.ms-footer__separator {
+  margin: 0 var(--space-size-4);
+}

@@ -1,1 +1,82 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+// Include functions first
+@import "bootstrap/scss/functions";
+
+
+@import "./assets/scss/base/variables";
+@import "./assets/scss/base/mixins";
+
+// Required
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/close";
+@import "bootstrap/scss/popover";
+@import "bootstrap/scss/offcanvas";
+
+
+
+// Utilities
+@import "bootstrap/scss/utilities/api";
+
+// theme
+@import "./assets/scss/base/fonts";
+@import "./assets/scss/base/typography";
+
+// utility classes
+@import "./assets/scss/utilities/utilities";
+@import "./assets/scss/utilities/colors";
+@import "./assets/scss/utilities/spacing";
+@import "./assets/scss/utilities/sizing";
+@import "./assets/scss/utilities/borders";
+@import "./assets/scss/utilities/elevations";
+@import "./assets/scss/utilities/line-height";
+
+
+
+
+@import "bootstrap/scss/utilities/api";
+
+// grid system
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+
+// general base
+@import "./assets/scss/base/reset";
+
+// general layouts
+@import "./assets/scss/layouts/page-layouts";
+@import "./assets/scss/layouts/footer";
+@import "./assets/scss/layouts/header";
+
+// general utilities
+@import "./assets/scss/utilities/helpers";
+// general modules
+@import "./assets/scss/modules/auth";
+
+
+// Material Custom
+@import "./assets/scss/material-custom/form-field.scss";
+@import "./assets/scss/material-custom/checkbox";
+@import "./assets/scss/material-custom/otp";
+@import "./assets/scss/material-custom/button-toggle";
+@import "./assets/scss/material-custom/loading";
+@import "./assets/scss/material-custom/tabs";
+@import "./assets/scss/material-custom/menu";
+@import "./assets/scss/material-custom/tooltip";
+@import "./assets/scss/material-custom/calendar";
+@import "./assets/scss/material-custom/accordion";
+@import "./assets/scss/material-custom/tables";
+

@@ -1,0 +1,38 @@
+.mat-expansion-indicator{
+  transform: rotate(270deg) !important;
+  display: block;
+  padding: var(--space-size-16) !important;
+}
+.mat-expansion-panel-spacing{
+  .mat-expansion-indicator{
+    transform: rotate(180deg) !important;
+  }
+}
+.mat-expansion-indicator svg{
+  fill: inherit !important;
+}
+.mat-expansion-panel-header{
+  border-bottom-left-radius: unset !important;
+    border-bottom-right-radius: unset !important;
+    padding: var(--space-size-8) var(--space-size-16) !important;
+    min-height: 74px;
+    border-radius: unset !important;
+    font-size: var(--font-size-typo-16) !important;
+    font-weight: var(--font-semiBold) !important;
+    line-height: 18px !important;
+    font-family: var(--font-family) !important;
+}
+.mat-expansion-panel-body{
+  padding: var(--space-size-16) var(--space-size-16) var(--space-size-8) var(--space-size-8) !important;
+}
+.price-list{
+  .mat-expansion-panel-body{
+    padding:var(--space-size-8) !important;
+  }
+}
+.contacts{
+  .mat-expansion-panel-body{
+    padding:var(--space-size-24) !important;
+  }
+}
+
