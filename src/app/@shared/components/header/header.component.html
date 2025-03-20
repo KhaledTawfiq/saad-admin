@@ -1,187 +1,24 @@
-<header class="header" #header>
+<header class="header">
   <div class="container">
-    <div class="header__inner">
+    <div class="header__content">
       <div class="header__start">
-        <a class="header__logo" routerLink="/">
-          <app-logo></app-logo>
-        </a>
-        <nav class="header__nav" [ngClass]="{ 'header__nav--show': isMenuOpen }" #menuElement>
-          <button class="close-menu" (click)="toggleMenu()">
-            <icon name="close-menu" width="20" height="20"></icon>
-          </button>
-          @if (isLogin) {
-            <div class="user-info">
-              <div class="user-info__avatar">AA</div>
-              <div class="user-menu__content">
-                <div class="user-menu__name">أحمد عبد المنعم</div>
-                <div class="user-menu__tag">متدرب</div>
-              </div>
-            </div>
-          }
-          <a class="header__nav-link" [routerLink]="[dashRoutes.base.route]"
-            routerLinkActive="header__nav-link--active">
-            <span>عن ساعد</span>
-          </a>
-          @if (isLogin) {
-            <a class="header__nav-link user-menu__item">
-              <span>الملف الشخصي</span>
-            </a>
-            <a class="header__nav-link user-menu__item">
-              <span>سجل الدورات السابقة</span>
-            </a>
-          }
-
-          <button class="header__nav-link header__nav-link--has-menu" (click)="toggleMegaMenu()">
-            <span>الدورات
-              التدريبية</span>
-            <icon name="arrow-bottom-2" width="12" height="7"></icon>
-
-            <div class="mega-menu" [ngClass]="{ 'mega-menu--open': isMegaMenuOpen }">
-              <button class="close-menu" (click)="toggleMegaMenu(); $event.stopPropagation()">
-                <icon name="close-menu" width="20" height="20"></icon>
-              </button>
-              <div class="container">
-                <div class="mega-menu__container">
-                  <div class="mega-menu__group">
-                    <h3 class="mega-menu__title">عنوان مجموعة</h3>
-                    <ul class="mega-menu__list">
-                      <li class="mega-menu__item">
-                        <a href="">عنوان عنصر القائمة</a>
-                      </li>
-                      <li class="mega-menu__item">
-                        <a href="">عنوان عنصر القائمة</a>
-                      </li>
-                      <li class="mega-menu__item">
-                        <a href="">عنوان عنصر القائمة</a>
-                      </li>
-                      <li class="mega-menu__item">
-                        <a href="">عنوان عنصر القائمة</a>
-                      </li>
-                      <li class="mega-menu__item">
-                        <a href="">عنوان عنصر القائمة</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="mega-menu__group">
-                    <h3 class="mega-menu__title">عنوان مجموعة</h3>
-                    <ul class="mega-menu__list">
-                      <li class="mega-menu__item">
-                        <a href="">عنوان عنصر القائمة</a>
-                      </li>
-                      <li class="mega-menu__item">
-                        <a href="">عنوان عنصر القائمة</a>
-                      </li>
-                      <li class="mega-menu__item">
-                        <a href="">عنوان عنصر القائمة</a>
-                      </li>
-                      <li class="mega-menu__item">
-                        <a href="">عنوان عنصر القائمة</a>
-                      </li>
-                      <li class="mega-menu__item">
-                        <a href="">عنوان عنصر القائمة</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="mega-menu__group">
-                    <h3 class="mega-menu__title">عنوان مجموعة</h3>
-                    <ul class="mega-menu__list">
-                      <li class="mega-menu__item">
-                        <a href="">عنوان عنصر القائمة</a>
-                      </li>
-                      <li class="mega-menu__item">
-                        <a href="">عنوان عنصر القائمة</a>
-                      </li>
-                      <li class="mega-menu__item">
-                        <a href="">عنوان عنصر القائمة</a>
-                      </li>
-                      <li class="mega-menu__item">
-                        <a href="">عنوان عنصر القائمة</a>
-                      </li>
-                      <li class="mega-menu__item">
-                        <a href="">عنوان عنصر القائمة</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="mega-menu__group">
-                    <h3 class="mega-menu__title">عنوان مجموعة</h3>
-                    <ul class="mega-menu__list">
-                      <li class="mega-menu__item">
-                        <a href="">عنوان عنصر القائمة</a>
-                      </li>
-                      <li class="mega-menu__item">
-                        <a href="">عنوان عنصر القائمة</a>
-                      </li>
-                      <li class="mega-menu__item">
-                        <a href="">عنوان عنصر القائمة</a>
-                      </li>
-                      <li class="mega-menu__item">
-                        <a href="">عنوان عنصر القائمة</a>
-                      </li>
-                      <li class="mega-menu__item">
-                        <a href="">عنوان عنصر القائمة</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </button>
-          <a class="header__nav-link" [routerLink]="[dashRoutes.base.route]"
-            routerLinkActive="header__nav-link--active">المساعدة و
-            الدعم</a>
-            <button class="header__nav-link header__nav-link--language" (click)="toggleLanguage()">
-              <!-- <icon name="language" width="22" height="22"></icon> -->
-              <span>{{ i18nService.language === 'en' ? 'العربية' : 'English' }}</span>
-            </button>
-            @if (isLogin) {
-              <button class="header__nav-link user-menu__item" (click)="isLogin = !isLogin">
-                <span>تسجيل الخروج</span>
-              </button>
-            }
-        </nav>
+        <button class="button button--icon button--outlined button--menu">
+          <icon name="menu" width="18" height="16"></icon>
+        </button>
+        <header-search />
       </div>
       <div class="header__end">
-        <button class="header__nav-link header__nav-link--has-icon" (click)="toggleSearch()">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-            <g id="elements">
-              <path id="Icon" fill-rule="evenodd" clip-rule="evenodd"
-                d="M10 0.25C4.61522 0.25 0.25 4.61522 0.25 10C0.25 15.3848 4.61522 19.75 10 19.75C12.4224 19.75 14.6385 18.8666 16.3437 17.4043L20.4697 21.5303C20.7626 21.8232 21.2374 21.8232 21.5303 21.5303C21.8232 21.2374 21.8232 20.7626 21.5303 20.4697L17.4043 16.3437C18.8666 14.6385 19.75 12.4224 19.75 10C19.75 4.61522 15.3848 0.25 10 0.25ZM1.75 10C1.75 5.44365 5.44365 1.75 10 1.75C14.5563 1.75 18.25 5.44365 18.25 10C18.25 14.5563 14.5563 18.25 10 18.25C5.44365 18.25 1.75 14.5563 1.75 10Z"
-                fill="#161616" />
-            </g>
-          </svg>
-          <span>بحث عن دورة</span>
-        </button>
         <button class="header__nav-link header__nav-link--language" (click)="toggleLanguage()">
           <icon name="language" width="22" height="22"></icon>
-          <span class="margin-start-size-4"> {{ i18nService.language === 'en' ? 'العربية' : 'English' }} </span>
+          <span class="margin-start-size-4"> {{ i18nService.language === 'en' ? 'ع' : 'E' }} </span>
         </button>
-        @if (!isLogin) {
-        <a class="header__nav-link header__nav-link--has-icon" (click)="isLogin = !isLogin">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 20 22" fill="none">
-            <g id="elements">
-              <g id="Icon">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M9.99976 0.25C7.10026 0.25 4.74976 2.6005 4.74976 5.5C4.74976 8.39949 7.10026 10.75 9.99976 10.75C12.8993 10.75 15.2498 8.39949 15.2498 5.5C15.2498 2.6005 12.8993 0.25 9.99976 0.25ZM6.24976 5.5C6.24976 3.42893 7.92869 1.75 9.99976 1.75C12.0708 1.75 13.7498 3.42893 13.7498 5.5C13.7498 7.57107 12.0708 9.25 9.99976 9.25C7.92869 9.25 6.24976 7.57107 6.24976 5.5Z"
-                  fill="#161616" />
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M16.2286 14.0792C16.066 13.9874 15.9224 13.9064 15.8061 13.8372C12.252 11.7209 7.74785 11.7209 4.1938 13.8372C4.07748 13.9064 3.93381 13.9875 3.77114 14.0793C3.05833 14.4814 1.98082 15.0893 1.24265 15.8118C0.780984 16.2637 0.34233 16.8592 0.262584 17.5888C0.177778 18.3646 0.516241 19.0927 1.19526 19.7396C2.36671 20.8556 3.77249 21.75 5.5908 21.75H14.4091C16.2274 21.75 17.6332 20.8556 18.8046 19.7396C19.4836 19.0927 19.8221 18.3646 19.7373 17.5888C19.6575 16.8592 19.2189 16.2637 18.7572 15.8118C18.019 15.0893 16.9414 14.4813 16.2286 14.0792ZM4.96122 15.126C8.04239 13.2913 11.9575 13.2913 15.0386 15.126C15.2065 15.226 15.3905 15.3303 15.5832 15.4397C16.2958 15.8439 17.1279 16.316 17.708 16.8838C18.0681 17.2363 18.2216 17.5271 18.2462 17.7517C18.2657 17.9301 18.2206 18.2242 17.7699 18.6535C16.7341 19.6404 15.6815 20.25 14.4091 20.25H5.5908C4.31835 20.25 3.26578 19.6404 2.22993 18.6535C1.7793 18.2242 1.7342 17.9301 1.7537 17.7517C1.77826 17.5271 1.93177 17.2363 2.2919 16.8838C2.87199 16.316 3.70401 15.844 4.41662 15.4397C4.60928 15.3304 4.79335 15.226 4.96122 15.126Z"
-                  fill="#161616" />
-              </g>
-            </g>
-          </svg>
-          <span>تسجيل دخول</span>
-        </a>
-        }
-        <button class="burger-menu" (click)="toggleMenu()">
-          <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#161616">
-            <path d="M144-264v-72h672v72H144Zm0-180v-72h672v72H144Zm0-180v-72h672v72H144Z" />
-          </svg>
-        </button>
-        @if (isLogin) {
+
+
         <button [matMenuTriggerFor]="menu" class="user-menu-button">
           <div class="user-menu-button__avatar"> AA</div>
-          <icon name="arrow-bottom" width='11' height="6"></icon>
+          <icon name="arrow-bottom" width="11" height="6"></icon>
         </button>
+
         <mat-menu #menu="matMenu" class="user-menu">
           <div class="user-info">
             <div class="user-info__avatar">AA</div>
@@ -192,82 +29,19 @@
           </div>
           <button mat-menu-item>
             <icon name="user-menu" width="20" height="22"></icon>
-            <div>
-              الملف الشخصي
-            </div>
+            <div> الملف الشخصي </div>
           </button>
           <button mat-menu-item>
             <icon name="course" width="22" height="22"></icon>
-            <div>
-              سجل الدورات السابقة
-            </div>
+            <div> سجل الدورات السابقة </div>
           </button>
           <button mat-menu-item (click)="isLogin = !isLogin">
             <icon name="logout-02" width="18" height="20"></icon>
-            <div>
-              تسجيل الخروج
-            </div>
+            <div> تسجيل الخروج </div>
           </button>
         </mat-menu>
-        }
-      </div>
-    </div>
-  </div>
-  <div class="search-menu" [ngClass]="{ 'search-menu--show': isSearchOpen }">
-    <div class="container">
-      <button (click)="toggleSearch()" class="search-menu__close">
-        <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
-          <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M11.0581 10.5581C11.3021 10.314 11.6979 10.314 11.9419 10.5581L16.5 15.1161L21.0581 10.5581C21.3021 10.314 21.6979 10.314 21.9419 10.5581C22.186 10.8021 22.186 11.1979 21.9419 11.4419L17.3839 16L21.9419 20.5581C22.186 20.8021 22.186 21.1979 21.9419 21.4419C21.6979 21.686 21.3021 21.686 21.0581 21.4419L16.5 16.8839L11.9419 21.4419C11.6979 21.686 11.3021 21.686 11.0581 21.4419C10.814 21.1979 10.814 20.8021 11.0581 20.5581L15.6161 16L11.0581 11.4419C10.814 11.1979 10.814 10.8021 11.0581 10.5581Z"
-            fill="#161616" />
-        </svg>
-      </button>
-      <div class="d-flex">
-        <div class="search">
-          <label for="fname"></label>
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-            <g id="elements">
-              <path id="Icon" fill-rule="evenodd" clip-rule="evenodd"
-                d="M10 0.25C4.61522 0.25 0.25 4.61522 0.25 10C0.25 15.3848 4.61522 19.75 10 19.75C12.4224 19.75 14.6385 18.8666 16.3437 17.4043L20.4697 21.5303C20.7626 21.8232 21.2374 21.8232 21.5303 21.5303C21.8232 21.2374 21.8232 20.7626 21.5303 20.4697L17.4043 16.3437C18.8666 14.6385 19.75 12.4224 19.75 10C19.75 4.61522 15.3848 0.25 10 0.25ZM1.75 10C1.75 5.44365 5.44365 1.75 10 1.75C14.5563 1.75 18.25 5.44365 18.25 10C18.25 14.5563 14.5563 18.25 10 18.25C5.44365 18.25 1.75 14.5563 1.75 10Z"
-                fill="#161616"></path>
-            </g>
-          </svg>
-          <input type="text" id="fname" name="firstname" placeholder="بحث">
-        </div>
-        <button class="search__button">بحث</button>
-      </div>
-      <h2 class="search__title">اقتراحات</h2>
-      <div class="d-flex">
-        <button class="tag">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none">
-            <g id="elements">
-              <path id="Icon" fill-rule="evenodd" clip-rule="evenodd"
-                d="M7.5 0.4375C7.81066 0.4375 8.0625 0.68934 8.0625 1L8.0625 6.4375L13.5 6.4375C13.8107 6.4375 14.0625 6.68934 14.0625 7C14.0625 7.31066 13.8107 7.5625 13.5 7.5625L8.0625 7.5625L8.0625 13C8.0625 13.3107 7.81066 13.5625 7.5 13.5625C7.18934 13.5625 6.9375 13.3107 6.9375 13L6.9375 7.5625L1.5 7.5625C1.18934 7.5625 0.9375 7.31066 0.9375 7C0.9375 6.68934 1.18934 6.4375 1.5 6.4375L6.9375 6.4375L6.9375 1C6.9375 0.68934 7.18934 0.4375 7.5 0.4375Z"
-                fill="#161616" />
-            </g>
-          </svg>
-          <span class="tag__text">التدريب</span>
-        </button>
-        <button class="tag">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none">
-            <g id="elements">
-              <path id="Icon" fill-rule="evenodd" clip-rule="evenodd"
-                d="M7.5 0.4375C7.81066 0.4375 8.0625 0.68934 8.0625 1L8.0625 6.4375L13.5 6.4375C13.8107 6.4375 14.0625 6.68934 14.0625 7C14.0625 7.31066 13.8107 7.5625 13.5 7.5625L8.0625 7.5625L8.0625 13C8.0625 13.3107 7.81066 13.5625 7.5 13.5625C7.18934 13.5625 6.9375 13.3107 6.9375 13L6.9375 7.5625L1.5 7.5625C1.18934 7.5625 0.9375 7.31066 0.9375 7C0.9375 6.68934 1.18934 6.4375 1.5 6.4375L6.9375 6.4375L6.9375 1C6.9375 0.68934 7.18934 0.4375 7.5 0.4375Z"
-                fill="#161616" />
-            </g>
-          </svg>
-          <span class="tag__text">الخدمات</span>
-        </button>
-        <button class="tag">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none">
-            <g id="elements">
-              <path id="Icon" fill-rule="evenodd" clip-rule="evenodd"
-                d="M7.5 0.4375C7.81066 0.4375 8.0625 0.68934 8.0625 1L8.0625 6.4375L13.5 6.4375C13.8107 6.4375 14.0625 6.68934 14.0625 7C14.0625 7.31066 13.8107 7.5625 13.5 7.5625L8.0625 7.5625L8.0625 13C8.0625 13.3107 7.81066 13.5625 7.5 13.5625C7.18934 13.5625 6.9375 13.3107 6.9375 13L6.9375 7.5625L1.5 7.5625C1.18934 7.5625 0.9375 7.31066 0.9375 7C0.9375 6.68934 1.18934 6.4375 1.5 6.4375L6.9375 6.4375L6.9375 1C6.9375 0.68934 7.18934 0.4375 7.5 0.4375Z"
-                fill="#161616" />
-            </g>
-          </svg>
-          <span class="tag__text">المقالات</span>
-        </button>
+
+
       </div>
     </div>
   </div>

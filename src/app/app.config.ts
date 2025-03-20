@@ -28,7 +28,7 @@ export const appConfig: ApplicationConfig = {
       TranslateModule.forRoot(provideTranslation()),
     ]),
     TranslateStore,
-    TranslateService,
+    TranslateService, provideAnimationsAsync(),
   ],
 };
 export function HttpLoaderFactory(httpBackend: HttpBackend) {

@@ -18,9 +18,9 @@
     height: 24px;
 
     &:hover {
-      --mdc-checkbox-unselected-hover-icon-color: var(--color-gray-3);
+      --mdc-checkbox-unselected-hover-icon-color: var(--color-gray);
       .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true]) ~ .mdc-checkbox__background {
-        border: 2px solid var(--color-gray-3);
+        border: 1px solid var(--color-gray);
         box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.07);
       }
     }
@@ -48,6 +48,7 @@
   .mat-mdc-checkbox-touch-target {
     width: 24px;
     height: 24px;
+    right: 0;
   }
 
   .mdc-checkbox .mdc-checkbox__native-control {
@@ -55,8 +56,8 @@
   }
 
   .mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true]) ~ .mdc-checkbox__background {
-    border-radius: 6px;
-    border: 2px solid var(--color-gray-3);
+    border-radius: 2px;
+    border: 1px solid var(--color-gray);
   }
 
   &--space-between {
@@ -73,29 +74,29 @@
     background-color: unset !important;
 
     .mdc-checkbox__checkmark {
-      color: var(--color-black) !important;
+      color: var(--color-white) !important;
     }
   }
 
   .mdc-checkbox .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background,
   .mdc-checkbox .mdc-checkbox__native-control:enabled:indeterminate ~ .mdc-checkbox__background,
   .mdc-checkbox .mdc-checkbox__native-control[data-indeterminate=true]:enabled ~ .mdc-checkbox__background {
-    border: 2px solid var(--color-primary);
-    border-radius: 6px;
+    border: 1px solid var(--color-black);
+    border-radius: 2px;
   }
 
   .mdc-checkbox .mdc-checkbox__native-control:enabled:focus:checked ~ .mdc-checkbox__background,
   .mdc-checkbox .mdc-checkbox__native-control:enabled:focus:indeterminate ~ .mdc-checkbox__background {
-    border: 2px solid var(--color-primary);
-    box-shadow: 0 0 15px 10px rgba(255, 235, 59, 0.5);
-    border-radius: 6px;
+    border: 1px solid var(--color-black);
+    box-shadow: 0 0 7px 7px rgb(0 0 0 / 13%);
+    border-radius: 2px;
   }
 
   .mdc-checkbox:hover .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background,
   .mdc-checkbox:hover .mdc-checkbox__native-control:enabled:indeterminate ~ .mdc-checkbox__background,
   .mdc-checkbox:hover .mdc-checkbox__native-control[data-indeterminate=true]:enabled ~ .mdc-checkbox__background {
-    border: 2px solid var(--color-primary);
-    border-radius: 6px;
+    border: 1px solid var(--color-black);
+    border-radius: 2px;
   }
 
   .mdc-checkbox__background {
@@ -113,7 +114,7 @@
   }
 
   .mdc-checkbox .mdc-checkbox__native-control:enabled:focus:focus:not(:checked):not(:indeterminate) ~ .mdc-checkbox__background {
-    --mdc-checkbox-unselected-focus-icon-color: var(--color-gray-3);
+    --mdc-checkbox-unselected-focus-icon-color: var(--color-gray);
   }
   .mat-mdc-checkbox-ripple, .mdc-checkbox__ripple {
     top: 3px;
@@ -124,6 +125,6 @@
 .mat-mdc-checkbox-checked {
   .mdc-checkbox__background {
     --mdc-checkbox-selected-icon-color: var(--color-black);
-    background-color: var(--color-primary) !important;
+    background-color: var(--color-black) !important;
   }
 }

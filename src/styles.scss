@@ -65,18 +65,18 @@
 @import "./assets/scss/utilities/helpers";
 // general modules
 @import "./assets/scss/modules/auth";
+@import "./assets/scss/modules/avatar";
+@import "./assets/scss/modules/breadcrumb";
+@import "./assets/scss/modules/buttons";
+@import "./assets/scss/modules/card";
+@import "./assets/scss/modules/forms";
 
 
 // Material Custom
-@import "./assets/scss/material-custom/form-field.scss";
-@import "./assets/scss/material-custom/checkbox";
-@import "./assets/scss/material-custom/otp";
-@import "./assets/scss/material-custom/button-toggle";
-@import "./assets/scss/material-custom/loading";
-@import "./assets/scss/material-custom/tabs";
-@import "./assets/scss/material-custom/menu";
-@import "./assets/scss/material-custom/tooltip";
-@import "./assets/scss/material-custom/calendar";
-@import "./assets/scss/material-custom/accordion";
-@import "./assets/scss/material-custom/tables";
+@import "./assets/scss/custom-material/checkbox";
+@import "./assets/scss/custom-material/dialog";
+@import "./assets/scss/custom-material/menu";
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
