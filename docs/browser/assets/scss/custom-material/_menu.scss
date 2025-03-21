@@ -1,0 +1,25 @@
+.mat-mdc-menu-panel{
+  min-width: 241px !important;
+  border-radius: var(--radius-8, 8px) !important;
+  border: 1px solid var(--Border-border-neutral-primary, #D2D6DB);
+  background-color: var(--Background-background-menu, #FFF) !important;
+  box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03) !important;
+}
+.mat-mdc-menu-content, .mat-mdc-menu-content .mat-mdc-menu-item .mat-mdc-menu-item-text {
+  font-family: var(--font-family) !important;
+  color: var(--Text-text-default, #161616) !important;
+  font-size: var(--Size-Text-typo-size-text-md, 16px) !important;
+  font-weight: 400 !important;
+  line-height: var(--Line-Height-Text-line-heights-text-md, 24px) !important; /* 150% */
+}
+.mat-mdc-menu-item-text{
+  display: flex;
+  align-items: center;
+  gap: var(--space-size-8);
+}
+.mat-mdc-menu-item{
+  min-height: auto !important;
+  padding: var(--space-size-8) !important;
+  margin-top: var(--space-size-8) !important;
+  margin-bottom: var(--space-size-8);
+}

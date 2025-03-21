@@ -1,0 +1,120 @@
+:root {
+  @each $size, $value in $sizes {
+    --space-#{$size}: #{$value};
+  }
+}
+
+@each $size, $value in $sizes {
+  .margin-#{$size} {
+    margin: var(--space-#{$size}) !important;
+
+    @include media-breakpoint-down(lg) {
+      margin: #{map-get($sizes-lg, $size)} !important;
+    }
+
+  }
+
+  .padding-#{$size} {
+    padding: var(--space-#{$size}) !important;
+
+    @include media-breakpoint-down(lg) {
+      padding: #{map-get($sizes-lg, $size)} !important;
+    }
+  }
+
+  @each $direction, $value in $directions {
+    .margin-#{$direction}-#{$size} {
+      @if $direction == "x" {
+        margin-left: var(--space-#{$size}) !important;
+        margin-right: var(--space-#{$size}) !important;
+      } @else if $direction == "y" {
+        margin-top: var(--space-#{$size}) !important;
+        margin-bottom: var(--space-#{$size}) !important;
+      } @else {
+        margin-#{$value}: var(--space-#{$size}) !important;
+      }
+
+      @include media-breakpoint-down(lg) {
+        @if $direction == "x" {
+          margin-left: #{map-get($sizes-lg, $size)} !important;
+          margin-right: #{map-get($sizes-lg, $size)} !important;
+        } @else if $direction == "y" {
+          margin-top: #{map-get($sizes-lg, $size)} !important;
+          margin-bottom: #{map-get($sizes-lg, $size)} !important;
+        } @else {
+          margin-#{$value}: #{map-get($sizes-lg, $size)} !important;
+        }
+      }
+
+    }
+
+    .padding-#{$direction}-#{$size} {
+      @if $direction == "x" {
+        padding-left: var(--space-#{$size}) !important;
+        padding-right: var(--space-#{$size}) !important;
+      } @else if $direction == "y" {
+        padding-top: var(--space-#{$size}) !important;
+        padding-bottom: var(--space-#{$size}) !important;
+      } @else {
+        padding-#{$value}: var(--space-#{$size}) !important;
+      }
+
+      @include media-breakpoint-down(lg) {
+        @if $direction == "x" {
+          padding-left: #{map-get($sizes-lg, $size)} !important;
+          padding-right: #{map-get($sizes-lg, $size)} !important;
+        } @else if $direction == "y" {
+          padding-top: #{map-get($sizes-lg, $size)} !important;
+          padding-bottom: #{map-get($sizes-lg, $size)} !important;
+        } @else {
+          padding-#{$value}: #{map-get($sizes-lg, $size)} !important;
+        }
+      }
+    }
+  }
+}
+
+@each $size, $value in $sizes {
+  .gap-#{$size} {
+    gap: var(--space-#{$size}) !important;
+
+    @include media-breakpoint-down(lg) {
+      gap: #{map-get($sizes-lg, $size)} !important;
+    }
+  }
+
+  .gap-x-#{$size} {
+    column-gap: var(--space-#{$size}) !important;
+  }
+
+  .gap-y-#{$size} {
+    row-gap: var(--space-#{$size}) !important;
+  }
+}
+
+.margin-inline-start-m {
+  margin-inline-start: var(--space-size-24) !important;
+}
+
+.margin-inline-end-m {
+  margin-inline-end: var(--space-size-24) !important;
+}
+
+.margin-inline-start-base {
+  margin-inline-start: var(--space-size-16) !important;
+}
+
+.margin-inline-end-base {
+  margin-inline-end: var(--space-size-16) !important;
+}
+
+.margin-inline-start-s {
+  margin-inline-start: var(--space-size-8) !important;
+}
+
+.margin-inline-end-s {
+  margin-inline-end: var(--space-size-8) !important;
+}
+.margin-inline-start-none {
+  margin-inline-start: var(--space-size-0) !important;
+}

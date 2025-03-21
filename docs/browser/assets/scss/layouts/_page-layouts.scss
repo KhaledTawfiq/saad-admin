@@ -1,0 +1,38 @@
+.layout{
+  background: url(/assets/images/auth-bg.jpg) no-repeat center center / cover;
+  height: 100vh;
+  position: relative;
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.20);
+    backdrop-filter: blur(14px);
+    z-index: 1;
+  }
+  .layout__container{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+}
+
+router-outlet {
+  display: contents;
+}
+
+router-outlet:empty {
+  display: none;
+}
+
+// router-outlet {
+//   display: block;
+//   height: 0;
+//   overflow: hidden;
+// }
