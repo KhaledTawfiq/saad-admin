@@ -1,22 +1,23 @@
 $colors: (
   // Main colors
-  "black": #252421,
+  "black": #161616,
   "black-2": #54534E,
   "black-3": #222,
   "black-4": #333,
   "black-5": #2F2F2F,
+  "black-6": #404040,
 
 
   "black-hover": #3a3937,
   "white": #ffff,
-  "primary": #FFD600,
-  "primary-light": #FFE457,
-  "primary-light2": #FFFDF0,
-  "primary-light3": #FFC800,
-  "primary-hover": #FFE94D,
+  "white-2": #FFFFFFCC,
+  "primary": #1B8354,
+  "primary-light": #E8FFED,
+  "primary-light2": #93dda3,
+  "primary-hover": #155f3e,
   "second-yellow": #FFF9DC,
-  "gray": #8A8982,
-  "gray-1": #89877D,
+  "gray": #6C737F,
+  "gray-1": #F3F4F6,
   "gray-2": #ABAAA2,
   "gray-3": #C8C8BF,
   "gray-4": #E0DFDC,
@@ -28,6 +29,11 @@ $colors: (
   "gray-10": #CACFD8,
   "gray-11": #d6d6d6,
   "gray-12": #707070,
+  "neutral-secondary": #E5E7EB,
+  "neutral-light": #F9FAFB,
+  "text-neutral": #1F2A37,
+  "link-neutral": #1F2A37,
+
 
 
   "light-gray": #F5F7F1,
@@ -46,6 +52,7 @@ $colors: (
   "purple": #6147FF,
   "dark-gray": #31302E,
   "dark-gray-1": #2C2A28,
+  "error": #B42318,
 );
 
 @include colors-variation($colors);

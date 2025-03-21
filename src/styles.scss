@@ -68,8 +68,9 @@
 @import "./assets/scss/modules/avatar";
 @import "./assets/scss/modules/breadcrumb";
 @import "./assets/scss/modules/buttons";
-@import "./assets/scss/modules/card";
+@import "./assets/scss/modules/cards";
 @import "./assets/scss/modules/forms";
+@import "./assets/scss/modules/loading";
 
 
 // Material Custom
@@ -79,4 +80,4 @@
 
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; }

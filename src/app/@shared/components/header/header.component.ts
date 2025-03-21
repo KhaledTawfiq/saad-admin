@@ -1,10 +1,12 @@
-import { Component, ElementRef, Inject, PLATFORM_ID, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, inject, Inject, PLATFORM_ID, Renderer2, ViewChild } from '@angular/core';
 import { I18nService, languageKey } from '../../../../assets/i18n/i18n.service';
 import { isPlatformBrowser } from '@angular/common';
 import {MatMenuModule} from '@angular/material/menu';
-import { DashRoutes } from '../../../@core/helpers/allRoutes.helper';
+import { AllRoutes, DashRoutes } from '../../../@core/helpers/allRoutes.helper';
 import { IconComponent } from '../icon/icon.component';
 import { HeaderSearchComponent } from '../header-search/header-search.component';
+import { CredentialsService } from '../../services/credentials.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -18,7 +20,10 @@ export class HeaderComponent {
   @ViewChild('menuElement') menuElement!: ElementRef;
   @ViewChild('header') headerElement!: ElementRef;
   dashRoutes = new DashRoutes();
-  constructor(public i18nService: I18nService) { }
+  public i18nService = inject(I18nService);
+  public credentialsService = inject(CredentialsService);
+  private router = inject(Router);
+    allRoutes = AllRoutes;
   isLogin = false;
 
   toggleLanguage() {
@@ -29,5 +34,8 @@ export class HeaderComponent {
     window.location.reload();
     this.i18nService.language = newLang;
   }
-
+  logout() {
+    this.credentialsService.clearCredentials();
+    this.router.navigate([this.allRoutes.auth.login.route]);
+  }
 }

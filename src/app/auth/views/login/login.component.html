@@ -1,1 +1,45 @@
-<p>login works!</p>
+<div class="login">
+  <div class="login__container">
+    <div class="card card--auth">
+      <h4 class="card__title">
+        تسجيل الدخول إلى حسابك
+      </h4>
+      <form class="margin-top-size-32" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" novalidate>
+        <div class="row g-4">
+          <div class="col-12">
+            <div class="form-group">
+              <label for="email"> <span class="label__required">*</span> البريد الإلكتروني</label>
+              <div class="input-wrapper">
+                <input type="email" id="email" name="email" placeholder="ادخل البريد الإلكتروني" required email ngModel
+                  #email="ngModel">
+              </div>
+              @if(email.invalid && email.touched){
+              <div class="input-error">يرجى إدخال بريد إلكتروني صحيح</div>
+              }
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group">
+              <label for="password"> <span class="label__required">*</span> كلمة المرور </label>
+              <div class="input-wrapper">
+                <input type="password" id="password" name="password" placeholder="ادخل كلمة المرور" required ngModel
+                  #password="ngModel">
+              </div>
+              @if(password.invalid && password.touched){
+              <div class="input-error">يرجى إدخال كلمة المرور</div>
+              }
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="button button--black margin-top-size-24 w-100"
+          [disabled]="contactForm.invalid">دخول</button>
+      </form>
+    </div>
+    <div class="auth__logo">
+      <img src="/assets/images/logo_white.png" alt="">
+    </div>
+  </div>
+</div>
+@if(isLogin){
+  <loading />
+}

@@ -7,8 +7,8 @@ export interface IRoute {
 
 export class AuthRoutes {
   base: IRoute = {
-    route: '',
-    path: '',
+    route: 'auth',
+    path: 'auth',
     title: 'auth',
   };
   login: IRoute = {
@@ -19,8 +19,8 @@ export class AuthRoutes {
 }
 export class DashRoutes {
   base: IRoute = {
-    route: '',
-    path: '',
+    route: 'dashboard',
+    path: 'dashboard',
     title: 'Dashboard',
   };
   courses: IRoute = {
