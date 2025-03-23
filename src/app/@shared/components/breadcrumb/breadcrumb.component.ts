@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { DashRoutes } from '../../../@core/helpers/allRoutes.helper';
+import { UserInfoRoutes } from '../../../@core/helpers/allRoutes.helper';
 
 @Component({
   selector: 'breadcrumb',
@@ -9,7 +9,7 @@ import { DashRoutes } from '../../../@core/helpers/allRoutes.helper';
   styleUrl: './breadcrumb.component.scss'
 })
 export class BreadcrumbComponent {
-  dashRoutes = new DashRoutes();
+  UserInfoRoutes = new UserInfoRoutes();
   dataLength: number = 0;
   @Input() data: any = [];
   @Input() current: string = '';

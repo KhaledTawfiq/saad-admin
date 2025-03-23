@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DashRoutes } from '../../../@core/helpers/allRoutes.helper';
+import { UserInfoRoutes } from '../../../@core/helpers/allRoutes.helper';
 
 @Component({
   selector: 'app-footer',
@@ -9,5 +9,5 @@ import { DashRoutes } from '../../../@core/helpers/allRoutes.helper';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-dashRoutes = new DashRoutes();
+UserInfoRoutes = new UserInfoRoutes();
 }

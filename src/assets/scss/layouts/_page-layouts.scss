@@ -21,14 +21,18 @@
     justify-content: space-between;
     height: 100%;
   }
+  .layout__content{
+    &--grow{
+      flex-grow: 1;
+    }
+  }
 }
 
 router-outlet {
   display: contents;
-}
-
-router-outlet:empty {
-  display: none;
+  &:empty{
+    display: none;
+  }
 }
 
 // router-outlet {

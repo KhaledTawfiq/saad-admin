@@ -1,17 +1,18 @@
 import { Component, ElementRef, inject, Inject, PLATFORM_ID, Renderer2, ViewChild } from '@angular/core';
 import { I18nService, languageKey } from '../../../../assets/i18n/i18n.service';
 import { isPlatformBrowser } from '@angular/common';
-import {MatMenuModule} from '@angular/material/menu';
-import { AllRoutes, DashRoutes } from '../../../@core/helpers/allRoutes.helper';
+import { MatMenuModule } from '@angular/material/menu';
+import { AllRoutes, UserInfoRoutes } from '../../../@core/helpers/allRoutes.helper';
 import { IconComponent } from '../icon/icon.component';
 import { HeaderSearchComponent } from '../header-search/header-search.component';
 import { CredentialsService } from '../../services/credentials.service';
 import { Router } from '@angular/router';
+import { SidenavService } from '../../services/sidenav.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MatMenuModule,IconComponent,HeaderSearchComponent],
+  imports: [MatMenuModule, IconComponent, HeaderSearchComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   host: { 'ngSkipHydration': '' } // 🔥 Disables hydration for this entire component
@@ -19,11 +20,12 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   @ViewChild('menuElement') menuElement!: ElementRef;
   @ViewChild('header') headerElement!: ElementRef;
-  dashRoutes = new DashRoutes();
+  UserInfoRoutes = new UserInfoRoutes();
   public i18nService = inject(I18nService);
   public credentialsService = inject(CredentialsService);
   private router = inject(Router);
-    allRoutes = AllRoutes;
+  public sidenavService = inject(SidenavService);
+  allRoutes = AllRoutes;
   isLogin = false;
 
   toggleLanguage() {

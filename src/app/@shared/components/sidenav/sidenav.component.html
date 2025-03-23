@@ -1,0 +1,15 @@
+<div class="sidenav">
+  <div class="sidenav__logo">
+    <icon name="logo-vertical" width="206" height="104"></icon>
+  </div>
+  <ul class="sidenav__list">
+    @for (item of sideNavList; track item) {
+    <li class="sidenav__item">
+      <a class="sidenav__link" [routerLink]="[item.route]" routerLinkActive="sidenav__link--active" >
+        <icon [name]="item.icon" width="28" height="29"></icon>
+        <span>{{item.name}}</span>
+      </a>
+    </li>
+  }
+  </ul>
+</div>

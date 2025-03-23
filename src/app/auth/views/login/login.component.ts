@@ -27,7 +27,7 @@ export class LoginComponent {
         this.isLogin = false;
         const credentials : Credentials = { token: form.value.email, username: form.value.password };
         this.credentialsService.saveCredentials(credentials);
-        this.router.navigate([this.allRoutes.dash.base.route]);
+        this.router.navigate([this.allRoutes.userInfo.base.route]);
       }, 3000);
     }
   }

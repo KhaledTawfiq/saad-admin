@@ -71,12 +71,14 @@
 @import "./assets/scss/modules/cards";
 @import "./assets/scss/modules/forms";
 @import "./assets/scss/modules/loading";
+@import "./assets/scss/modules/sidenav";
 
 
 // Material Custom
 @import "./assets/scss/custom-material/checkbox";
 @import "./assets/scss/custom-material/dialog";
 @import "./assets/scss/custom-material/menu";
+@import "./assets/scss/custom-material/custom-drawer";
 
 
 html, body { height: 100%; }

@@ -1,0 +1,29 @@
+.sidenav__logo {
+  display: flex;
+  justify-content: center;
+}
+.sidenav__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-size-8);
+  margin-top: var(--space-size-24);
+}
+.sidenav__link{
+  text-decoration: none;
+  color: var(--color-white);
+  font-size: var(--font-size-typo-16);
+  font-weight: var(--font-medium);
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-size-12);
+  padding: var(--space-size-12);
+  border-radius: 8px;
+  transition: background 0.3s;
+  &:hover, &--active{
+    background: var(--Button-button-background-black-selected, #384250);
+  }
+}

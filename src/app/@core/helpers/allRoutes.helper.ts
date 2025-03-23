@@ -9,28 +9,47 @@ export class AuthRoutes {
   base: IRoute = {
     route: 'auth',
     path: 'auth',
-    title: 'auth',
+    title: 'Auth',
   };
   login: IRoute = {
     route: `${this.base.route}/login`,
     path: `login`,
-    title: 'login',
+    title: 'Login',
   };
 }
-export class DashRoutes {
+export class UserInfoRoutes {
   base: IRoute = {
-    route: 'dashboard',
-    path: 'dashboard',
-    title: 'Dashboard',
+    route: 'user-info',
+    path: 'user-info',
+    title: 'User info',
   };
-  courses: IRoute = {
-    route: `${this.base.route}/courses`,
+}
+export class CoursesRoutes {
+  base: IRoute = {
+    route: `courses`,
     path: `courses`,
     title: 'Courses',
+  };
+}
+export class CalenderRoutes {
+  base: IRoute = {
+    route: `calender`,
+    path: `calender`,
+    title: 'Calender',
+  };
+}
+export class AcademicProgramsRoutes {
+  base: IRoute = {
+    route: `academic-programs`,
+    path: `academic-programs`,
+    title: 'Academic Programs',
   };
 }
 
 export const AllRoutes = {
   auth: { ...new AuthRoutes() },
-  dash: { ...new DashRoutes() },
+  userInfo: { ...new UserInfoRoutes() },
+  courses: { ...new CoursesRoutes() },
+  calender: { ...new CalenderRoutes() },
+  academicPrograms: { ...new AcademicProgramsRoutes() },
 };

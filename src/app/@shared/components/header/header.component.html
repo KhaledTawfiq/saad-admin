@@ -1,45 +1,48 @@
 <header class="header">
   <div class="container">
     <div class="header__content">
+      @if(credentialsService.isAuthenticated()){
       <div class="header__start">
-        <button class="button button--icon button--outlined button--menu">
+        <button class="button button--icon button--outlined button--menu" (click)="sidenavService.toggleSidenav()">
           <icon name="menu" width="18" height="16"></icon>
         </button>
-        <header-search />
-      </div>
+          <header-search />
+        </div>
+      }
       <div class="header__end">
         <button class="header__nav-link header__nav-link--language" (click)="toggleLanguage()">
           <icon name="language" width="22" height="22"></icon>
-          <span class="margin-start-size-4"> {{ i18nService.language === 'en' ? 'ع' : 'E' }} </span>
+          <span class="margin-start-size-4"> {{ i18nService.language === 'en' ? 'E' : 'ع' }} </span>
         </button>
 
+        @if(credentialsService.isAuthenticated()){
+          <button [matMenuTriggerFor]="menu" class="user-menu-button">
+            <div class="user-menu-button__avatar"> AA</div>
+            <icon name="arrow-bottom" width="11" height="6"></icon>
+          </button>
 
-        <button [matMenuTriggerFor]="menu" class="user-menu-button">
-          <div class="user-menu-button__avatar"> AA</div>
-          <icon name="arrow-bottom" width="11" height="6"></icon>
-        </button>
-
-        <mat-menu #menu="matMenu" class="user-menu">
-          <div class="user-info">
-            <div class="user-info__avatar">AA</div>
-            <div class="user-menu__content">
-              <div class="user-menu__name">أحمد عبد المنعم</div>
-              <div class="user-menu__tag">متدرب</div>
+          <mat-menu #menu="matMenu" class="user-menu">
+            <div class="user-info">
+              <div class="user-info__avatar">AA</div>
+              <div class="user-menu__content">
+                <div class="user-menu__name">أحمد عبد المنعم</div>
+                <div class="user-menu__tag">متدرب</div>
+              </div>
             </div>
-          </div>
-          <button mat-menu-item>
-            <icon name="user-menu" width="20" height="22"></icon>
-            <div> الملف الشخصي </div>
-          </button>
-          <button mat-menu-item>
-            <icon name="course" width="22" height="22"></icon>
-            <div> سجل الدورات السابقة </div>
-          </button>
-          <button mat-menu-item (click)="isLogin = !isLogin" (click)="logout()">
-            <icon name="logout-02" width="18" height="20"></icon>
-            <div> تسجيل الخروج </div>
-          </button>
-        </mat-menu>
+            <button mat-menu-item>
+              <icon name="user-menu" width="20" height="22"></icon>
+              <div> الملف الشخصي </div>
+            </button>
+            <button mat-menu-item>
+              <icon name="course" width="22" height="22"></icon>
+              <div> سجل الدورات السابقة </div>
+            </button>
+            <button mat-menu-item (click)="isLogin = !isLogin" (click)="logout()">
+              <icon name="logout-02" width="18" height="20"></icon>
+              <div> تسجيل الخروج </div>
+            </button>
+          </mat-menu>
+        }
 
 
       </div>

@@ -177,3 +177,6 @@ input.search-input__field {
   padding-inline-start: calc( var(--space-size-16) + var(--space-size-8) + var(--space-size-12)) ;
   max-height: 40px;
 }
+input:-internal-autofill-selected {
+  background: unset !important;
+}

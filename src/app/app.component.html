@@ -1,7 +1,19 @@
-<div class="layout">
-  <div class="layout__container">
-    <app-header />
-    <router-outlet />
-    <app-footer />
+
+<mat-drawer-container class="drawer-container" autosize [hasBackdrop]="false">
+  <mat-drawer #drawer class="drawer-sidenav" mode="side" opened [position]="i18nService.language === 'en' ? 'start' : 'end'">
+    <sidenav />
+  </mat-drawer>
+
+  <div class="drawer-content">
+    <div class="layout">
+      <div class="layout__container">
+        <app-header />
+        <div class="layout__content " [ngClass]="{'layout__content--grow': credentialsService.isAuthenticated()}">
+          <router-outlet />
+        </div>
+        <app-footer />
+      </div>
+    </div>
   </div>
-</div>
+
+</mat-drawer-container>
